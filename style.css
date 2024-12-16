@@ -21,3 +21,39 @@
     /* translate (X,Y) from original position */
     transform: translate(10px,35px);
 }
+
+/* STEP #1: Define the animation sequence */
+@keyframes colorchange {
+    from { background-color: aqua;}
+    to { background-color:  red;}
+}
+
+@keyframes colorchangesmooth {
+    0% { background-color: aqua;}
+    50% { background-color: rgb(205, 35, 140);}
+    100% { background-color: aqua;}
+}
+
+/* STEP #2: Configure animation on an element */
+
+#animated-box {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    animation-name: colorchangesmooth;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+/* Use TRANSFORMS in an animation */
+@keyframes spin {
+    0% { transform: rotate(0deg)}
+    100% { transform: rotate(360deg)}
+}
+#animated-emoji {
+    font-size: 70px;
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
